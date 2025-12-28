@@ -8,23 +8,27 @@
     row-gap: $row-gap;
 }
 
-@mixin font ($size: 1rem, $weight: 500, $color: #fff, $style: normal) {
-    font {
+@mixin font($size: 16px, $weight: 400, $color: #fff, $style: normal) {
+    font: {
         size: $size;
         weight: $weight;
         style: $style;
     }
 
-    color: $color;
+    color:$color;
+
 }
 
-@mixin position ($type: relative, $zIndex: 1, $inset: -1, $top-or-bottom: top, $left-or-right: left, $value1: 0, $value2: 0) {
+@mixin position($type: relative, $zIndex: 1, $inset: -1, $top-or-bottonm: top, $left-or-right: left, $valie1: 0, $valie2: 0) {
+    position: $type;
+    z-index: $zIndex;
+
     @if $inset >-1 {
         inset: $inset;
     }
 
     @else {
-        #{$top-or-bottom}: $value1;
-        #{$left-or-right}: $value2;
+        #{$top-or-bottonm}: $valie1;
+        #{$left-or-right}: $valie2;
     }
 }

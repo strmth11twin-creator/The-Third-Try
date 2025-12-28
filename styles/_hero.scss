@@ -1,0 +1,165 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders' as p;
+@use 'sass:color';
+
+.hero {
+    background: url(/assets/Images/f62ba577818ca3548e6a3d3671041f9a301e680d.png) center/contain no-repeat;
+    position: relative;
+    width: 100%;
+    height: 900px;
+    @include m.d-flex(space-around, center, nowrap, column, 0, 50px);
+
+    &__perfomance {
+        position: relative;
+        height: 360px;
+        max-width: 930px;
+
+        &-title {
+            max-width: 930px;
+            @include m.font (120px, 500, v.$color__black);
+        }
+
+        &-button {
+            @include m.position(absolute, 1, -1, bottom, right, -40px, 0);
+            width: 380px;
+            height: 80px;
+            @include m.font (28px, 700, v.$color__whote);
+            background-color: v.$color__black;
+            border-radius: 90px;
+        }
+
+        @media (max-width:p.$media_lg) {
+            height: 400px;
+            max-width: 700px;
+
+            &-button {
+                @include m.position(absolute, 1, -1, bottom, left, -50px, 0);
+            }
+
+            &-title {
+                @include m.font (100px, 700, v.$color__black);
+            }
+
+        }
+
+        @media (max-width:p.$media_md) {
+            max-width: 560px;
+            height: 400px;
+
+            &-button {
+                width: 300px;
+                height: 70px;
+                @include m.position(absolute, 1, -1, bottom, left, 0, 0);
+            }
+
+            &-title {
+
+                @include m.font (70px, 700, v.$color__black);
+            }
+        }
+
+        @media (max-width:p.$media_sm) {
+            height: 300px;
+
+            max-width: 400px;
+
+            &-title {
+
+                @include m.font (45px, 700, v.$color__black);
+            }
+        }
+    }
+
+    &__content {
+
+        padding: 0px 0 0 50px;
+        border-radius: 20px;
+        max-width: 685px;
+        height: 70px;
+        background-color: color.adjust(v.$color__whote, $alpha: -0.85);
+        position: relative;
+
+        &-wrapper {
+            @include m.d-flex(space-around, center, nowrap, row, 0, 0);
+
+            .hero__content-desc {
+                @include m.d-flex(center, center, nowrap, row, 0, 0);
+                @include m.font (14px, 400, v.$color__black);
+                max-width: 450px;
+                height: 70px;
+                border-right: 1px solid v.$color__whote;
+
+            }
+
+            .hero__content-button {
+                background-color: unset;
+                border: none;
+
+
+                @include m.font(25px, 400, v.$color__black);
+            }
+
+        }
+
+        .hero__content-img {
+            @include m.position(absolute, 1, -1, top, left, -70px, -60px);
+        }
+
+        @media (max-width:p.$media_md) {
+            max-width: 450px;
+            width: 100%;
+            height: 120px;
+
+            &-wrapper {
+                height: 120px;
+                @include m.d-flex(center, center, nowrap, column, 0, 0);
+            }
+
+            .hero__content-desc {
+
+                border-right: none;
+                border-bottom: 1px solid v.$color__whote;
+                @include m.font(12px, 400, v.$color__black);
+            }
+
+        }
+    }
+
+    &__scroll {
+        @include m.position (absolute, 1, -1, bottom, left, 240px, 0);
+        writing-mode: vertical-rl;
+
+        &-content {
+            position: relative;
+            @include m.font(16px, 500, v.$color__whote);
+
+            &::after {
+                content: "";
+                width: 1px;
+                height: 70px;
+                display: block;
+                @include m.position (absolute, 1, -1, bottom, left, -90px, 8px);
+                background-color: v.$color__whote;
+
+            }
+
+        }
+
+        @media (max-width:p.$media_md) {
+            @include m.position (absolute, 1, -1, bottom, left, 300px, 0);
+        }
+
+        @media (max-width:p.$media_sm) {
+            @include m.position (absolute, 1, -1, bottom, left, 370px, 0);
+        }
+    }
+
+    @media (max-width:p.$media_md) {
+        background: url(/assets/Images/f62ba577818ca3548e6a3d3671041f9a301e680d.png) 90% 10%/contain no-repeat;
+    }
+
+    @media (max-width:p.$media_sm) {
+            background: url(/assets/Images/f62ba577818ca3548e6a3d3671041f9a301e680d.png) 90% 15%/contain no-repeat;
+    }
+}
