@@ -4,33 +4,166 @@
 @use 'sass:color';
 
 .testimonials {
-
-    &__title {
-
-        @include m.font(60px, 400, v.$color__whote);
-
+    padding: 0 0 100px 0;
+    @media (max-width:p.$media_md) {
+            padding: 0 0 0 0;
     }
-
     &__comment {
-       
-        background: url(/assets/Images/Rectangle\ 9.png) center/contain no-repeat;
-        width: 500px;
-        height: 275px;
 
-        &-quote {
-            max-width: 400px;
-            height: 105px;
+        &-title {
+            @include m.font(60px, 400, v.$color__whote);
         }
 
-        .slider__left-button {
+        position: relative;
+        @include m.d-flex(start, center, nowrap, column, 0, 20px);
+        height: 673px;
 
-            width: 95px;
-            height: 95px;
+        &-card {
+            padding: 50px 0 0 0;
+            position: relative;
+            background: url(/assets/Images/стекло.png) 0% 0%/contain no-repeat;
+            max-width: 500px;
+            width: 100%;
+            height: 100%;
+            line-height: 1.4;
+            @include m.d-flex(start, start, nowrap, column, 0, 20px);
+
+            .comment__card-img {
+                border-radius: 50px;
+                margin: 0 0 0 50px;
+            }
+
+
+            .comment__card-quote {
+                @include m.font(20px, 400, v.$color__whote);
+                padding: 0 0 0 50px;
+                max-width: 450px;
+            }
+
+            .comment__card-button-left {
+                width: 66px;
+                height: 66px;
+                @include m.position(absolute, 1, -1, bottom, left, 400px, -100px);
+                border: none;
+                border-radius: 20px;
+                background: color.adjust(v.$color__whote, $alpha: -0.85);
+                rotate: 45deg;
+
+                &-icon {
+                    rotate: 135deg;
+                    fill: v.$color__whote;
+                    width: 35px;
+                    height: 22px;
+                }
+            }
+
+            .comment__card-button-right {
+                rotate: 45deg;
+                width: 66px;
+                height: 66px;
+                border: none;
+                border-radius: 20px;
+                background: color.adjust(v.$color__whote, $alpha: -0.85);
+                @include m.position(absolute, 1, -1, bottom, right, 400px, -100px);
+
+
+                &-icon {
+                    rotate: -45deg;
+                    fill: v.$color__whote;
+                    width: 35px;
+                    height: 22px;
+                }
+            }
+
+
         }
 
-        .slider__right-button {
-            width: 95px;
-            height: 95px;
+        .points {
+            @include m.position(absolute, 1, -1, bottom, left, 0, 50%);
+            translate: -50% 0;
+            @include m.d-flex(start, center, nowrap, row, 9px, 0);
+
+            .points__item {
+                width: 13px;
+                height: 13px;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+        }
+
+        @media(max-width:p.$media_md) {
+            
+            .points {
+                @include m.position(absolute, 1, -1, bottom, left, 235px, 50%);
+            }
+
+            .comment__card-button-left {
+                @include m.position(absolute, 1, -1, bottom, left, 210px, 25px);
+            }
+
+            .comment__card-button-right {
+                @include m.position(absolute, 1, -1, bottom, right, 210px, 25px);
+            }
+        }
+
+        @media(max-width:p.$media_sm) {
+            .points {
+                @include m.position(absolute, 1, -1, bottom, left, 290px, 50%);
+            }
+
+            &-title {
+                @include m.font(40px, 400, v.$color__whote);
+            }
+
+            &-card {
+                padding: 30px 0 0 0;
+                position: relative;
+                background: url(/assets/Images/стекло.png) 0% 0%/400px no-repeat;
+                max-width: 400px;
+                width: 100%;
+                height: 550px;
+
+                line-height: 1.2;
+                @include m.d-flex(start, start, nowrap, column, 0, 20px);
+
+                .comment__card-img {
+                    border-radius: 50px;
+                    margin: 0 0 0 50px;
+                }
+
+
+                .comment__card-quote {
+                    @include m.font(16px, 400, v.$color__whote);
+                    padding: 0 0 0 50px;
+                    max-width: 350px;
+                }
+            }
+        }
+        @media(max-width:p.$media_min) {
+            &-card {
+                    padding: 30px 0 0 0;
+                    position: relative;
+                    background: url(/assets/Images/стекло.png) 0% 0%/370px no-repeat;
+                    max-width: 400px;
+
+                    width: 100%;
+                    height: 550px;
+            
+                    line-height: 1.4;
+                    @include m.d-flex(start, start, nowrap, column, 0, 20px);
+            
+                    .comment__card-img {
+                        border-radius: 50px;
+                        margin: 0 0 0 50px;
+                    }
+            
+            
+                    .comment__card-quote {
+                        @include m.font(13px, 400, v.$color__whote);
+                        padding: 0 0 0 50px;
+                        max-width: 300px;
+                    }
+                }
         }
     }
 }
