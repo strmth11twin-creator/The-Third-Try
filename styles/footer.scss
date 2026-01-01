@@ -1,0 +1,48 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders' as p;
+@use 'sass:color';
+
+.footer__section {
+    background-color: color.adjust(v.$color__whote, $alpha: -0.85);
+
+    .footer {
+        @include m.d-flex(space-between, center, nowrap, row, 0, 0);
+        height: 140px;
+
+        &__content {
+            @include m.d-flex(start, start, nowrap, column, 0, 20px);
+
+            &-links {
+                @include m.font(20px, 400, v.$color__whote);
+                @include m.d-flex(start, start, nowrap, row, 40px, 0);
+            
+            }
+            &-rights {
+                @include m.font(14px, 300, v.$color__whote);
+            }
+
+        }
+
+        &__contancts {
+           
+            @include m.d-flex(space-between, center, nowrap, row, 20px, 0);
+            height: 23px;
+            width: 162px;
+
+            &-icon {
+                fill: v.$color__whote;
+                width: 25px;
+                height: 23px;
+                &:hover {
+                    scale: 1.2;
+                    fill: v.$color__black;
+                }
+            }
+        }
+        @media(max-width:p.$media_sm) {
+            height: 180px;
+            @include m.d-flex(space-around, center, nowrap, column-reverse, 0, 0);
+        }
+    }
+}
