@@ -23,6 +23,7 @@
     }
 
     &__cards {
+       
         max-width: 950px;
         margin: 0 auto;
         display: grid;
@@ -37,6 +38,7 @@
         ;
 
         .anlysis {
+          
             grid-template-areas: anylasis;
             justify-self: start;
         }
@@ -67,6 +69,13 @@
         }
 
         &-wrapper {
+            &:hover {
+                    scale: 1.1;
+                    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .20);
+                    cursor: pointer;
+                    color: v.$color__whote;
+                    fill: v.$color__whote;
+                }
             padding: 0 10px;
             background: color.adjust(v.$color__whote, $alpha: -0.85);
             width: 180px;

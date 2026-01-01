@@ -15,10 +15,13 @@
     }
 
     &__cards {
-          padding: 0 0 100px 0;
+
+
+        padding: 0 0 100px 0;
         @include m.d-flex(space-around, center, wrap, row, 20px, 20px);
 
         &-card {
+
             position: relative;
             width: 325px;
             height: 296px;
@@ -26,16 +29,17 @@
             @include m.d-flex(space-between, center, nowrap, column, 0, 0);
             border-radius: 10px;
             overflow: hidden;
-          
+
             .title2 {
                 padding: 15px 0 0 0;
                 text-align: center;
                 @include m.font(23px, 400, v.$color__whote);
             }
+
             .cards-card__title {
-                padding:25px 0 0 0;
+                padding: 25px 0 0 0;
                 @include m.font(23px, 400, v.$color__whote);
-                
+
             }
 
             .cards-card__img {
@@ -52,12 +56,13 @@
                 border-radius: 20px;
                 rotate: 7deg;
                 transition: rotate .2s;
+
                 &:hover {
                     cursor: pointer;
                     rotate: 7deg;
                     scale: 1.3;
                 }
-        
+
                 .cards-card__icon {
                     width: 36px;
                     height: 23px;
@@ -66,7 +71,15 @@
                     translate: 12px -3px;
                 }
             }
+
+            &:hover {
+                scale: 1.1;
+                box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .20);
+                cursor: pointer;
+                background-color: #3585aa;
+            }
         }
+
     }
 
 }
