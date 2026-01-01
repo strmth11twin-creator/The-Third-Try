@@ -1,0 +1,77 @@
+@use 'variables' as v;
+@use 'placeholders' as p;
+@use 'mixins' as m;
+@use 'sass:color';
+
+.form__section {  
+    height: 700px;
+     margin: 100px 0 100px 0;
+    position: relative;
+    overflow: hidden;
+    @include m.d-flex(center, center, nowrap, row, 0, 0);
+    .form__section-wrapper {
+     
+     
+
+        .form {
+            @include m.d-flex(center, center, nowrap, column, 0, 20px);
+            max-width: 623px;
+            height: 375px;
+
+            &__title {
+                @include m.font(36px, 400, v.$color__black);
+            }
+
+            &__name {
+                @include m.font(25px, 300, v.$color__grey);
+                height: 47px;
+                width: 100%;
+                border-radius: 20px;
+                border: 1px solid v.$color__grey;
+            }
+
+            &__email {
+                @include m.font(25px, 300, v.$color__grey);
+                height: 47px;
+                width: 100%;
+                border-radius: 20px;
+                border: 1px solid v.$color__grey;
+            }
+
+            &__question {
+                @include m.font(25px, 300, v.$color__grey);
+                height: 47px;
+                width: 100%;
+                border-radius: 20px;
+                border: 1px solid v.$color__grey;
+            }
+
+            &__button {
+                @include m.font(25px, 300, v.$color__grey);
+                height: 47px;
+                width: 100%;
+                border-radius: 20px;
+                border: 1px solid v.$color__black;
+                color: v.$color__whote;
+                background-color: v.$color__black;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: .8;
+                }
+            }
+        }
+    }
+    .form__section-cloud {
+         background: url(/assets/Images/f62ba577818ca3548e6a3d3671041f9a301e680d.png) center/contain no-repeat;
+        width: 700px;
+        height: 240px;
+       
+    }
+    .cloud__left {
+        @include m.position(absolute, 1, -1, top, left, 50px, -300px);
+    }
+        .cloud__right {
+            @include m.position(absolute, 1, -1, bottom, right, -15px, -370px);
+        }
+}
