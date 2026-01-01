@@ -58,14 +58,15 @@
 
         @media (max-width:p.$media_md) {
             &__links {
+                display: none; 
+               
+            }  &__covid {
                 display: none;
             }
         }
 
         @media (max-width:p.$media_sm) {
-            &__covid {
-                display: none;
-            }
+          
 
 
         }
